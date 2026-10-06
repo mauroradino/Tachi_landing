@@ -1,0 +1,63 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>TACHI · Decíselo. Él se acuerda.</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap">
+<style>
+:root{--o:#FF6A13;--bg:#FFF7EF;--ink:#241A12;--mute:#6F5E50;--card:#FFFFFF;--line:#F0DFCF;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17120E;--ink:#FFF1E4;--mute:#B9A594;--card:#211A14;--line:#33271D}}
+:root[data-theme="dark"]{--bg:#17120E;--ink:#FFF1E4;--mute:#B9A594;--card:#211A14;--line:#33271D}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.55 Nunito,ui-rounded,system-ui,sans-serif}
+.w{max-width:1040px;margin:0 auto;padding:0 24px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0;color:var(--o)}
+nav .l{display:flex;gap:12px;align-items:center}nav svg.m{width:34px}nav svg.t{height:20px;width:auto}
+.btn{display:inline-block;background:var(--o);color:#fff;font-weight:800;text-decoration:none;padding:14px 26px;border-radius:999px;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:48px 0 72px}
+h1{font-size:clamp(40px,6vw,68px);line-height:1.02;margin:0 0 18px;font-weight:800;letter-spacing:-.02em}h1 em{font-style:normal;color:var(--o)}
+.hero p{color:var(--mute);max-width:30em;margin:0 0 28px}
+.stage{color:var(--o);position:relative;text-align:center}
+.stage svg.big{width:min(100%,380px);overflow:visible}
+.dot{transform-origin:128px 28px;animation:ping 2.4s ease-in-out infinite}
+@keyframes ping{50%{transform:scale(1.25)}}
+.stage use{opacity:0;transition:opacity .25s}.stage use.on{opacity:1}
+.say{margin-top:8px;font-weight:800;color:var(--ink);min-height:1.6em}.say small{display:block;color:var(--mute);font-weight:400}
+h2{font-size:clamp(28px,4vw,40px);margin:0 0 12px;letter-spacing:-.01em}
+section{padding:56px 0;border-top:1px solid var(--line)}
+.g3,.g5{display:grid;gap:16px;margin-top:28px}.g3{grid-template-columns:repeat(3,1fr)}.g5{grid-template-columns:repeat(5,1fr)}
+.c{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px}
+.c b{display:block;font-size:20px;margin:6px 0}.c p{margin:0;color:var(--mute);font-size:16px}
+.n{color:var(--o);font-weight:800;font-size:14px;letter-spacing:.12em}
+.g5 .c{text-align:center;padding:18px 10px}.g5 svg{width:76px;color:var(--o)}.g5 b{font-size:16px}.g5 p{font-size:14px}
+.cta{text-align:center;background:var(--o);color:#fff;border-radius:32px;padding:56px 24px;margin:24px 0 56px}
+.cta h2{margin-bottom:8px}.cta p{margin:0 0 24px;opacity:.9}.cta .btn{background:#fff;color:var(--o)}
+footer{color:var(--mute);font-size:14px;padding:0 0 40px;text-align:center}
+@media(max-width:760px){.hero{grid-template-columns:1fr;text-align:center}.hero p{margin-inline:auto}.g3{grid-template-columns:1fr}.g5{grid-template-columns:repeat(2,1fr)}}
+@media(prefers-reduced-motion:reduce){.dot{animation:none}}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="f-idle" viewBox="0 0 256 256"><path fill="currentColor" d="M86,104.0 A12.0,12.0 0 0 1 110,104.0 V128.0 A12.0,12.0 0 0 1 86,128.0 Z M146,104.0 A12.0,12.0 0 0 1 170,104.0 V128.0 A12.0,12.0 0 0 1 146,128.0 Z M151.36,157.61 A30.5,30.5 0 0 1 104.64,157.61 A6.5,6.5 0 0 1 114.59,149.25 A17.5,17.5 0 0 0 141.41,149.25 A6.5,6.5 0 0 1 151.36,157.61 Z"/></symbol><symbol id="f-listen" viewBox="0 0 256 256"><path fill="currentColor" d="M88,91.0 A11.0,11.0 0 0 1 110,91.0 V135.0 A11.0,11.0 0 0 1 88,135.0 Z M146,91.0 A11.0,11.0 0 0 1 168,91.0 V135.0 A11.0,11.0 0 0 1 146,135.0 Z M119,164 A9,9 0 1 1 137,164 A9,9 0 1 1 119,164 Z"/></symbol><symbol id="f-wink" viewBox="0 0 256 256"><path fill="currentColor" d="M86,104.0 A12.0,12.0 0 0 1 110,104.0 V128.0 A12.0,12.0 0 0 1 86,128.0 Z M133.32,97.75 A28.5,28.5 0 0 1 182.68,97.75 A6.5,6.5 0 0 1 171.42,104.25 A15.5,15.5 0 0 0 144.58,104.25 A6.5,6.5 0 0 1 133.32,97.75 Z M151.36,157.61 A30.5,30.5 0 0 1 104.64,157.61 A6.5,6.5 0 0 1 114.59,149.25 A17.5,17.5 0 0 0 141.41,149.25 A6.5,6.5 0 0 1 151.36,157.61 Z"/></symbol><symbol id="f-happy" viewBox="0 0 256 256"><path fill="currentColor" d="M75.05,110.75 A26.5,26.5 0 0 1 120.95,110.75 A6.5,6.5 0 0 1 109.69,117.25 A13.5,13.5 0 0 0 86.31,117.25 A6.5,6.5 0 0 1 75.05,110.75 Z M135.05,110.75 A26.5,26.5 0 0 1 180.95,110.75 A6.5,6.5 0 0 1 169.69,117.25 A13.5,13.5 0 0 0 146.31,117.25 A6.5,6.5 0 0 1 135.05,110.75 Z M156.26,161.79 A34.5,34.5 0 0 1 99.74,161.79 A6.5,6.5 0 0 1 110.39,154.33 A21.5,21.5 0 0 0 145.61,154.33 A6.5,6.5 0 0 1 156.26,161.79 Z"/></symbol><symbol id="f-sleep" viewBox="0 0 256 256"><path fill="currentColor" d="M83.5,124 H108.5 A5.5,5.5 0 0 1 114,129.5 V129.5 A5.5,5.5 0 0 1 108.5,135 H83.5 A5.5,5.5 0 0 1 78,129.5 V129.5 A5.5,5.5 0 0 1 83.5,124 Z M147.5,124 H172.5 A5.5,5.5 0 0 1 178,129.5 V129.5 A5.5,5.5 0 0 1 172.5,135 H147.5 A5.5,5.5 0 0 1 142,129.5 V129.5 A5.5,5.5 0 0 1 147.5,124 Z M119.5,158 H136.5 A5.5,5.5 0 0 1 142,163.5 V163.5 A5.5,5.5 0 0 1 136.5,169 H119.5 A5.5,5.5 0 0 1 114,163.5 V163.5 A5.5,5.5 0 0 1 119.5,158 Z"/></symbol></svg>
+<div class="w"><nav><div class="l"><svg class="m" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M154.13,23.21 A108.0,108.0 0 1 1 80.66,30.93 A8.0,8.0 0 0 1 87.67,45.31 A92.0,92.0 0 1 0 150.26,38.73 A8.0,8.0 0 0 1 154.13,23.21 Z"/><path class="dot" fill="currentColor" d="M99.08268990399341,28.97319312584297 A15,15 0 1 1 129.0826899039934,28.97319312584297 A15,15 0 1 1 99.08268990399341,28.97319312584297 Z"/><use href="#f-idle" width="256" height="256"/></svg>
+<svg class="t" viewBox="0 0 746 256" role="img" aria-label="TACHI" style="height:22px"><path d="M60,60 H164 M112.0,60 V196 M210,196 V112.0 A52.0,52.0 0 0 1 314,112.0 V196 M210,152 H314 M472.53,82.50 A68.0,68.0 0 1 0 472.53,173.50 M520.0,60 V196 M624.0,60 V196 M686.0,60 V196" fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/><path d="M630.99,134.96 A82.0,82.0 0 0 1 513.01,134.96 A14.0,14.0 0 0 1 533.16,115.51 A54.0,54.0 0 0 0 610.84,115.51 A14.0,14.0 0 0 1 630.99,134.96 Z" fill="currentColor"/></svg></div><a class="btn" href="#espera">Quiero el mío</a></nav>
+<header class="hero"><div><h1>Decíselo.<br><em>Él se acuerda.</em></h1>
+<p>TACHI escucha lo que tenés que recordar, lo entiende y te avisa justo cuando lo pediste. Con una carita que te responde, sin pantallas llenas de menús.</p>
+<a class="btn" href="#espera">Anotame en la lista</a></div>
+<div class="stage"><svg class="big" viewBox="0 0 256 256" role="img" aria-label="TACHI, su aro de tiempo y su carita"><path fill="currentColor" d="M154.13,23.21 A108.0,108.0 0 1 1 80.66,30.93 A8.0,8.0 0 0 1 87.67,45.31 A92.0,92.0 0 1 0 150.26,38.73 A8.0,8.0 0 0 1 154.13,23.21 Z"/><path class="dot" fill="currentColor" d="M99.08268990399341,28.97319312584297 A15,15 0 1 1 129.0826899039934,28.97319312584297 A15,15 0 1 1 99.08268990399341,28.97319312584297 Z"/>
+<use id="f-idle-u" href="#f-idle" class="on" width="256" height="256"/><use href="#f-listen" width="256" height="256"/><use href="#f-wink" width="256" height="256"/><use href="#f-happy" width="256" height="256"/><use href="#f-sleep" width="256" height="256"/></svg>
+<div class="say" id="say" aria-live="polite"></div></div></header></div>
+<section><div class="w"><h2>Tres pasos, cero fricción</h2>
+<div class="g3"><div class="c"><span class="n">01</span><b>Decíselo</b><p>«Recordame llamar al dentista mañana a las 10». Hablá normal, como a una persona.</p></div>
+<div class="c"><span class="n">02</span><b>Lo entiende</b><p>Interpreta qué es y cuándo, y te lo confirma con un gesto. Sin configurar nada.</p></div>
+<div class="c"><span class="n">03</span><b>Te avisa a tiempo</b><p>A la hora que dijiste, el punto del aro se enciende y TACHI te lo recuerda.</p></div></div></div></section>
+<section><div class="w"><h2>Una cara que se explica sola</h2><p style="color:var(--mute);margin:0">Cada estado tiene su expresión, para que sepas qué pasa sin mirar una app.</p>
+<div class="g5"><div class="c"><svg viewBox="0 0 256 256"><use href="#f-idle"/></svg><b>Atento</b><p>Listo para escucharte</p></div>
+<div class="c"><svg viewBox="0 0 256 256"><use href="#f-listen"/></svg><b>Escuchando</b><p>Ojos bien abiertos</p></div>
+<div class="c"><svg viewBox="0 0 256 256"><use href="#f-wink"/></svg><b>Anotado</b><p>Un guiño: «yo me acuerdo»</p></div>
+<div class="c"><svg viewBox="0 0 256 256"><use href="#f-happy"/></svg><b>Aviso</b><p>Contento de recordártelo</p></div>
+<div class="c"><svg viewBox="0 0 256 256"><use href="#f-sleep"/></svg><b>Descansando</b><p>Sin pendientes por ahora</p></div></div></div></section>
+<section id="espera"><div class="w"><div class="cta"><h2>Que nada se te pase</h2><p>Sumate a la lista y sé de los primeros en tener un TACHI.</p><a class="btn" href="mailto:hola@tachi.example?subject=Quiero%20un%20TACHI">Anotame en la lista</a></div></div></section>
+<footer>© 2026 TACHI · Decíselo. Él se acuerda.</footer>
+<script>
+const u=[...document.querySelectorAll(".stage use")],say=document.getElementById("say");
+const S=[[0,"Atento","Esperando tu voz"],[1,"Escuchando…","«Recordame llamar al dentista mañana a las 10»"],[2,"Anotado","Mañana · 10:00"],[3,"¡Es la hora!","Llamar al dentista"],[4,"Descansando","Sin pendientes"]];
+let i=0;function go(){const s=S[i%S.length];u.forEach((x,j)=>x.classList.toggle("on",j===s[0]));say.innerHTML=s[1]+"<small>"+s[2]+"</small>";i++}
+go();if(!matchMedia("(prefers-reduced-motion:reduce)").matches)setInterval(go,2600);
+</script></body></html>
