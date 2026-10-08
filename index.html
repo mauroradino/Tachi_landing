@@ -16,11 +16,10 @@ nav .l{display:flex;gap:12px;align-items:center}nav svg.m{width:34px}nav svg.t{h
 h1{font-size:clamp(40px,6vw,68px);line-height:1.02;margin:0 0 18px;font-weight:800;letter-spacing:-.02em}h1 em{font-style:normal;color:var(--o)}
 .hero p{color:var(--mute);max-width:30em;margin:0 0 28px}
 .stage{color:var(--o);position:relative;text-align:center}
-.stage svg.big{width:min(100%,380px);overflow:visible}
+.stage .hero-sc{height:390px}
+.hero-rot{transform:rotateX(5deg) rotateY(-12deg)}
 .dot{transform-origin:128px 28px;animation:ping 2.4s ease-in-out infinite}
 @keyframes ping{50%{transform:scale(1.25)}}
-.stage use{opacity:0;transition:opacity .25s}.stage use.on{opacity:1}
-.say{margin-top:8px;font-weight:800;color:var(--ink);min-height:1.6em}.say small{display:block;color:var(--mute);font-weight:400}
 h2{font-size:clamp(28px,4vw,40px);margin:0 0 12px;letter-spacing:-.01em}
 section{padding:56px 0;border-top:1px solid var(--line)}
 .g3,.g5{display:grid;gap:16px;margin-top:28px}.g3{grid-template-columns:repeat(3,1fr)}.g5{grid-template-columns:repeat(5,1fr)}
@@ -39,18 +38,23 @@ footer{color:var(--mute);font-size:14px;padding:0 0 40px;text-align:center}
 .eq li{display:flex;gap:12px;align-items:center;font-size:16px}.eq li i{width:12px;height:12px;border-radius:50%;background:var(--o);flex:none}
 .eq .hint{font-size:14px;color:var(--mute)}.pbtn{border:0;cursor:pointer;font:800 16px Nunito,system-ui,sans-serif;background:var(--o);color:#241A12;border-radius:999px;padding:12px 22px}
 .sc{perspective:1100px;height:440px;display:grid;place-items:center;touch-action:pan-y}
-.rot{position:relative;width:210px;height:300px;transform-style:preserve-3d;transition:transform .12s ease-out}
-.slab{position:absolute;inset:0;border-radius:58px;border:1px solid rgba(0,0,0,.07)}
-.front{background:#FBF9F5 radial-gradient(rgba(60,50,40,.55) .6px,transparent .9px) 0 0/23px 19px;}
-.front:before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(rgba(60,50,40,.4) .5px,transparent .8px) 11px 9px/31px 27px}
-.oled{position:absolute;left:50%;top:40px;width:116px;height:104px;margin-left:-58px;border-radius:16px;background:#0D0A08;box-shadow:inset 0 0 0 3px #1c1713,0 1px 0 #fff;overflow:hidden;color:var(--o)}
-.oled svg{width:100%;height:100%;transition:transform .15s}.oled use{opacity:0;transition:opacity .2s}.oled use.on{opacity:1}
-.led{position:absolute;left:50%;top:18px;width:9px;height:9px;margin-left:-4.5px;border-radius:50%;background:var(--o);box-shadow:0 0 0 0 rgba(255,106,19,.6)}.led.alert{animation:led .8s infinite}
+.rot{position:relative;width:230px;height:310px;transform-style:preserve-3d;transition:transform .12s ease-out}
+.slab{position:absolute;inset:0;border-radius:52px;border:1px solid rgba(0,0,0,.07)}
+.front{background:radial-gradient(rgba(80,76,68,.2) .6px,transparent .95px) 0 0/18px 17px,linear-gradient(135deg,#fbfbf7,#efefe8);box-shadow:inset 0 0 0 8px rgba(255,255,255,.28),inset -8px -3px 16px rgba(150,148,137,.12),0 16px 28px rgba(36,26,18,.16)}
+.oled{position:absolute;left:50%;top:42px;width:148px;height:88px;margin-left:-74px;border-radius:13px;background:#080807;box-shadow:inset 0 0 0 2px #171715,0 1px 0 #fff;overflow:hidden;display:grid;place-items:center}
+.eyes{display:flex;align-items:center;justify-content:center;gap:38px;width:100%;height:100%;transition:transform .15s}
+.eyes i{display:block;width:19px;height:34px;border-radius:999px;background:#fff4dc;transition:height .18s,transform .18s}
+.oled.state-1 .eyes i{height:40px}
+.oled.state-2 .eyes i:last-child{height:8px;transform:translateY(-8px)}
+.oled.state-3 .eyes i{height:39px}
+.oled.state-4 .eyes i{height:9px}
+.led{position:absolute;right:40px;top:27px;width:7px;height:7px;border-radius:50%;background:#d9d8d0;box-shadow:0 0 0 0 rgba(255,106,19,.6)}.led.alert{background:var(--o);animation:led .8s infinite}
 @keyframes led{70%{box-shadow:0 0 0 12px rgba(255,106,19,0)}}
-.holes{position:absolute;left:50%;top:176px;transform:translateX(-50%);display:grid;grid-template-columns:repeat(8,6px);gap:9px}
-.holes b{width:6px;height:6px;border-radius:50%;background:#2B2621;box-shadow:inset 0 1px 1px #000a,0 1px 0 #fff}
-.b3d{position:absolute;left:105px;top:104px;transform-style:preserve-3d;cursor:pointer}
-.b3d div{position:absolute;width:30px;height:64px;left:-15px;top:-32px;border-radius:9px;background:var(--o);transform:rotateY(90deg) translateZ(calc(var(--i)*1.5px - var(--p,0px)))}
+.holes{position:absolute;left:50%;top:161px;transform:translateX(-50%);display:grid;grid-template-columns:repeat(5,10px);gap:11px 12px}
+.holes b{width:10px;height:10px;border-radius:50%;background:#c9c8bf;box-shadow:inset 0 1px 1px rgba(50,45,37,.12),0 1px 0 #fff}
+.holes b:nth-child(1),.holes b:nth-child(5),.holes b:nth-child(26),.holes b:nth-child(30){visibility:hidden}
+.b3d{position:absolute;left:0;top:147px;transform-style:preserve-3d;cursor:pointer}
+.b3d div{position:absolute;width:22px;height:56px;left:-11px;top:-28px;border-radius:8px;background:var(--o);transform:rotateY(-90deg) translateZ(calc(var(--i)*2.5px - var(--p,0px)))}
 .b3d div:last-child{background:#FF7F33}
 .cap{text-align:center;font-weight:800;margin-top:-8px}.cap small{display:block;color:var(--mute);font-weight:400}
 .huella{position:relative;height:72vh;min-height:420px;overflow:hidden;border-top:1px solid var(--line)}
@@ -63,12 +67,10 @@ footer{color:var(--mute);font-size:14px;padding:0 0 40px;text-align:center}
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="f-idle" viewBox="0 0 256 256"><path fill="currentColor" d="M86,104.0 A12.0,12.0 0 0 1 110,104.0 V128.0 A12.0,12.0 0 0 1 86,128.0 Z M146,104.0 A12.0,12.0 0 0 1 170,104.0 V128.0 A12.0,12.0 0 0 1 146,128.0 Z M151.36,157.61 A30.5,30.5 0 0 1 104.64,157.61 A6.5,6.5 0 0 1 114.59,149.25 A17.5,17.5 0 0 0 141.41,149.25 A6.5,6.5 0 0 1 151.36,157.61 Z"/></symbol><symbol id="f-listen" viewBox="0 0 256 256"><path fill="currentColor" d="M88,91.0 A11.0,11.0 0 0 1 110,91.0 V135.0 A11.0,11.0 0 0 1 88,135.0 Z M146,91.0 A11.0,11.0 0 0 1 168,91.0 V135.0 A11.0,11.0 0 0 1 146,135.0 Z M119,164 A9,9 0 1 1 137,164 A9,9 0 1 1 119,164 Z"/></symbol><symbol id="f-wink" viewBox="0 0 256 256"><path fill="currentColor" d="M86,104.0 A12.0,12.0 0 0 1 110,104.0 V128.0 A12.0,12.0 0 0 1 86,128.0 Z M133.32,97.75 A28.5,28.5 0 0 1 182.68,97.75 A6.5,6.5 0 0 1 171.42,104.25 A15.5,15.5 0 0 0 144.58,104.25 A6.5,6.5 0 0 1 133.32,97.75 Z M151.36,157.61 A30.5,30.5 0 0 1 104.64,157.61 A6.5,6.5 0 0 1 114.59,149.25 A17.5,17.5 0 0 0 141.41,149.25 A6.5,6.5 0 0 1 151.36,157.61 Z"/></symbol><symbol id="f-happy" viewBox="0 0 256 256"><path fill="currentColor" d="M75.05,110.75 A26.5,26.5 0 0 1 120.95,110.75 A6.5,6.5 0 0 1 109.69,117.25 A13.5,13.5 0 0 0 86.31,117.25 A6.5,6.5 0 0 1 75.05,110.75 Z M135.05,110.75 A26.5,26.5 0 0 1 180.95,110.75 A6.5,6.5 0 0 1 169.69,117.25 A13.5,13.5 0 0 0 146.31,117.25 A6.5,6.5 0 0 1 135.05,110.75 Z M156.26,161.79 A34.5,34.5 0 0 1 99.74,161.79 A6.5,6.5 0 0 1 110.39,154.33 A21.5,21.5 0 0 0 145.61,154.33 A6.5,6.5 0 0 1 156.26,161.79 Z"/></symbol><symbol id="f-sleep" viewBox="0 0 256 256"><path fill="currentColor" d="M83.5,124 H108.5 A5.5,5.5 0 0 1 114,129.5 V129.5 A5.5,5.5 0 0 1 108.5,135 H83.5 A5.5,5.5 0 0 1 78,129.5 V129.5 A5.5,5.5 0 0 1 83.5,124 Z M147.5,124 H172.5 A5.5,5.5 0 0 1 178,129.5 V129.5 A5.5,5.5 0 0 1 172.5,135 H147.5 A5.5,5.5 0 0 1 142,129.5 V129.5 A5.5,5.5 0 0 1 147.5,124 Z M119.5,158 H136.5 A5.5,5.5 0 0 1 142,163.5 V163.5 A5.5,5.5 0 0 1 136.5,169 H119.5 A5.5,5.5 0 0 1 114,163.5 V163.5 A5.5,5.5 0 0 1 119.5,158 Z"/></symbol></svg>
 <div class="w"><nav><div class="l"><svg class="m" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M154.13,23.21 A108.0,108.0 0 1 1 80.66,30.93 A8.0,8.0 0 0 1 87.67,45.31 A92.0,92.0 0 1 0 150.26,38.73 A8.0,8.0 0 0 1 154.13,23.21 Z"/><path class="dot" fill="currentColor" d="M99.08268990399341,28.97319312584297 A15,15 0 1 1 129.0826899039934,28.97319312584297 A15,15 0 1 1 99.08268990399341,28.97319312584297 Z"/><use href="#f-idle" width="256" height="256"/></svg>
 <svg class="t" viewBox="0 0 746 256" role="img" aria-label="TACHI" style="height:22px"><path d="M60,60 H164 M112.0,60 V196 M210,196 V112.0 A52.0,52.0 0 0 1 314,112.0 V196 M210,152 H314 M472.53,82.50 A68.0,68.0 0 1 0 472.53,173.50 M520.0,60 V196 M624.0,60 V196 M686.0,60 V196" fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/><path d="M630.99,134.96 A82.0,82.0 0 0 1 513.01,134.96 A14.0,14.0 0 0 1 533.16,115.51 A54.0,54.0 0 0 0 610.84,115.51 A14.0,14.0 0 0 1 630.99,134.96 Z" fill="currentColor"/></svg></div><a class="btn" href="#espera">Quiero el mío</a></nav>
-<header class="hero"><div><h1>Decíselo.<br><em>Él se acuerda.</em></h1>
+<header class="hero"><div><h1>Conocé a<br><em>TACHI.</em></h1>
 <p>TACHI escucha lo que tenés que recordar, lo entiende y te avisa justo cuando lo pediste. Con una carita que te responde, sin pantallas llenas de menús.</p>
 <a class="btn" href="#espera">Anotame en la lista</a></div>
-<div class="stage"><svg class="big" viewBox="0 0 256 256" role="img" aria-label="TACHI, su aro de tiempo y su carita"><path fill="currentColor" d="M154.13,23.21 A108.0,108.0 0 1 1 80.66,30.93 A8.0,8.0 0 0 1 87.67,45.31 A92.0,92.0 0 1 0 150.26,38.73 A8.0,8.0 0 0 1 154.13,23.21 Z"/><path class="dot" fill="currentColor" d="M99.08268990399341,28.97319312584297 A15,15 0 1 1 129.0826899039934,28.97319312584297 A15,15 0 1 1 99.08268990399341,28.97319312584297 Z"/>
-<use id="f-idle-u" href="#f-idle" class="on" width="256" height="256"/><use href="#f-listen" width="256" height="256"/><use href="#f-wink" width="256" height="256"/><use href="#f-happy" width="256" height="256"/><use href="#f-sleep" width="256" height="256"/></svg>
-<div class="say" id="say" aria-live="polite"></div></div></header></div>
+<div class="stage"><div class="sc hero-sc" aria-hidden="true"><div class="rot hero-rot" id="heroRot"></div></div></div></header></div>
 <section><div class="w"><h2>Tres pasos, cero fricción</h2>
 <div class="g3"><div class="c"><span class="n">01</span><b>Decíselo</b><p>«Recordame llamar al dentista mañana a las 10». Hablá normal, como a una persona.</p></div>
 <div class="c"><span class="n">02</span><b>Lo entiende</b><p>Interpreta qué es y cuándo, y te lo confirma con un gesto. Sin configurar nada.</p></div>
@@ -89,24 +91,19 @@ footer{color:var(--mute);font-size:14px;padding:0 0 40px;text-align:center}
 <section id="espera"><div class="w"><div class="cta"><h2>Que nada se te pase</h2><p>Sumate gratis a la lista y sé de los primeros en tener un TACHI.</p><a class="btn" href="https://wa.me/5491125821249?text=Hola%21%20Quiero%20sumarme%20a%20la%20lista%20de%20espera%20de%20Tachi">Anotame en la lista</a></div></div></section>
 <footer>© 2026 TACHI · Decíselo. Él se acuerda.</footer>
 <script>
-const u=[...document.querySelectorAll(".stage use")],say=document.getElementById("say");
-const S=[[0,"Atento","Esperando tu voz"],[1,"Escuchando…","«Recordame llamar al dentista mañana a las 10»"],[2,"Anotado","Mañana · 10:00"],[3,"¡Es la hora!","Llamar al dentista"],[4,"Descansando","Sin pendientes"]];
-let i=0;function go(){const s=S[i%S.length];u.forEach((x,j)=>x.classList.toggle("on",j===s[0]));say.innerHTML=s[1]+"<small>"+s[2]+"</small>";i++}
-go();if(!matchMedia("(prefers-reduced-motion:reduce)").matches)setInterval(go,2600);
-
-(()=>{const rot=document.getElementById("rot"),sc=document.getElementById("sc"),cap=document.getElementById("cap2"),N=32,W=210;
-const sym=["idle","listen","wink","happy","sleep"],lab=[["Atento","Esperando tu voz"],["Escuchando…","Hablale normal"],["Anotado","Mañana · 10:00"],["¡Es la hora!","Llamar al dentista"],["Descansando","Sin pendientes"]];
-let h="";for(let i=0;i<=N;i++){const z=-32+i*2,s=Math.round(226+i*0.7);
-h+=i<N?`<div class="slab" style="transform:translateZ(${z}px);background:rgb(${s-10},${s-12},${s-16})"></div>`:`<div class="slab front" style="transform:translateZ(${z}px)"><i class="led" id="led"></i><div class="oled"><svg id="osv" viewBox="48 52 160 140">${sym.map(k=>`<use href="#f-${k}" width="256" height="256"/>`).join("")}</svg></div><div class="holes">${"<b></b>".repeat(32)}</div></div>`}
-h+=`<div class="b3d" id="b3d">${[0,1,2,3,4,5].map(i=>`<div style="--i:${i}"></div>`).join("")}</div>`;rot.innerHTML=h;
-const us=[...rot.querySelectorAll(".oled use")],led=document.getElementById("led"),osv=document.getElementById("osv"),b3=document.getElementById("b3d");
-let st=0,busy=false;const show=k=>{st=k;us.forEach((u,j)=>u.classList.toggle("on",j===k));cap.innerHTML=lab[k][0]+"<small>"+lab[k][1]+"</small>";led.classList.toggle("alert",k===3)};
+(()=>{const rot=document.getElementById("rot"),heroRot=document.getElementById("heroRot"),sc=document.getElementById("sc"),cap=document.getElementById("cap2"),N=24;
+const lab=[["Atento","Esperando tu voz"],["Escuchando…","Hablale normal"],["Anotado","Mañana · 10:00"],["¡Es la hora!","Llamar al dentista"],["Descansando","Sin pendientes"]];
+let h="";for(let i=0;i<=N;i++){const z=-20+i*1.4,s=Math.round(245-i*.25);
+h+=i<N?`<div class="slab" style="transform:translateZ(${z}px);background:rgb(${s-7},${s-7},${s-11})"></div>`:`<div class="slab front" style="transform:translateZ(${z}px)"><i class="led"></i><div class="oled state-0"><div class="eyes"><i></i><i></i></div></div><div class="holes">${"<b></b>".repeat(30)}</div></div>`}
+h+=`<div class="b3d">${[0,1,2,3,4,5].map(i=>`<div style="--i:${i}"></div>`).join("")}</div>`;rot.innerHTML=h;heroRot.innerHTML=h;
+const displays=[rot.querySelector(".oled"),heroRot.querySelector(".oled")],leds=[rot.querySelector(".led"),heroRot.querySelector(".led")],eyes=rot.querySelector(".eyes"),buttons=[rot.querySelector(".b3d"),heroRot.querySelector(".b3d")];
+let st=0,busy=false;const show=k=>{st=k;displays.forEach(d=>{d.className=`oled state-${k}`});leds.forEach(l=>l.classList.toggle("alert",k===3));cap.innerHTML=lab[k][0]+"<small>"+lab[k][1]+"</small>"};
 show(0);const auto=setInterval(()=>{if(!busy)show((st+1)%5)},2600);
-const press=()=>{if(busy)return;busy=true;b3.style.setProperty("--p","6px");setTimeout(()=>b3.style.setProperty("--p","0px"),180);
+const press=()=>{if(busy)return;busy=true;buttons.forEach(b=>b.style.setProperty("--p","6px"));setTimeout(()=>buttons.forEach(b=>b.style.setProperty("--p","0px")),180);
 [[1,1500],[2,1300],[3,1800]].forEach((s,i,a)=>setTimeout(()=>{show(s[0]);if(i===a.length-1)setTimeout(()=>busy=false,s[1])},a.slice(0,i).reduce((t,x)=>t+x[1],0)))};
-document.getElementById("press").onclick=press;b3.onclick=press;
+document.getElementById("press").onclick=press;buttons.forEach(b=>b.onclick=press);
 let ry=-28,rx=8;const ap=()=>rot.style.transform=`rotateX(${rx}deg) rotateY(${ry}deg)`;ap();
-const mv=e=>{const r=sc.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;ry=-28+x*46;rx=8-y*26;ap();osv.style.transform=`translate(${x*10}px,${y*8}px)`};
+const mv=e=>{const r=sc.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;ry=-28+x*46;rx=8-y*26;ap();eyes.style.transform=`translate(${x*10}px,${y*8}px)`};
 sc.addEventListener("pointermove",mv);window.addEventListener("pointermove",e=>{if(sc.matches(":hover"))return;const r=sc.getBoundingClientRect(),x=Math.max(-1,Math.min(1,(e.clientX-(r.left+r.width/2))/innerWidth))*.5,y=Math.max(-1,Math.min(1,(e.clientY-(r.top+r.height/2))/innerHeight))*.5;ry=-28+x*30;rx=8-y*14;ap()});
 })();
 (()=>{const box=document.getElementById("huella"),cv=document.getElementById("cv"),c=cv.getContext("2d"),PX=5;
